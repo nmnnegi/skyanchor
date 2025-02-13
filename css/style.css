@@ -1,0 +1,788 @@
+/********** Template CSS **********/
+:root {
+    --primary: #FF3E41;
+    --secondary: #51CFED;
+    --light: #F8F2F0;
+    --dark: #060315;
+    font-family: 'Poppins', sans-serif;
+    
+}
+
+.fw-medium {
+    font-weight: 600 !important;
+}
+
+.back-to-top {
+    position: fixed;
+    display: none;
+    right: 45px;
+    bottom: 45px;
+    z-index: 99;
+}
+
+
+/*** Spinner ***/
+#spinner {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .5s ease-out, visibility 0s linear .5s;
+    z-index: 99999;
+}
+
+#spinner.show {
+    transition: opacity .5s ease-out, visibility 0s linear 0s;
+    visibility: visible;
+    opacity: 1;
+}
+
+
+/*** Button ***/
+.btn {
+    font-weight: 600;
+    transition: .5s;
+}
+
+.btn.btn-primary,
+.btn.btn-secondary {
+    color: #FFFFFF;
+}
+
+.btn-square {
+    width: 38px;
+    height: 38px;
+}
+
+.btn-sm-square {
+    width: 32px;
+    height: 32px;
+}
+
+.btn-lg-square {
+    width: 48px;
+    height: 48px;
+}
+
+.btn-square,
+.btn-sm-square,
+.btn-lg-square {
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: normal;
+}
+
+/*** Navbar ***/
+
+
+
+
+/*** About ***/
+/* About Section Image Box */
+/* Make About Image same as Map */
+/* About Image - Keep Original Dimensions but Styled Like Map */
+.about-image-container {
+    width: 100%;
+    height: auto; /* Keep original height */
+    border-radius: 10px; /* Same rounded edges as the map */
+    overflow: hidden;
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.15); /* Soft shadow like map */
+    position: relative;
+}
+
+/* Ensure image keeps its original size */
+.about-image-container img {
+    width: 100%;
+    height: auto; /* Keep original aspect ratio */
+    border: none; /* Remove any borders */
+    object-fit: cover;
+}
+
+@media (min-width: 992px) {
+    .container.about {
+        max-width: 100% !important;
+    }
+
+    .about-text  {
+        padding-right: calc(((100% - 960px) / 2) + .75rem);
+    }
+}
+
+@media (min-width: 1200px) {
+    .about-text  {
+        padding-right: calc(((100% - 1140px) / 2) + .75rem);
+    }
+}
+
+@media (min-width: 1400px) {
+    .about-text  {
+        padding-right: calc(((100% - 1320px) / 2) + .75rem);
+    }
+}
+
+
+/*** Feature ***/
+/* Our Features Image - Styled Like Map, Keep Original Size */
+.feature-image-container {
+    width: 100%;
+    height: auto; /* Keep original height */
+    border-radius: 10px; /* Same rounded edges as the map */
+    overflow: hidden;
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.15); /* Soft shadow like map */
+    position: relative;
+}
+
+/* Ensure image keeps its original dimensions */
+.feature-image-container img {
+    width: 100%;
+    height: auto; /* Maintain aspect ratio */
+    border: none; /* Remove any borders */
+    object-fit: cover;
+}
+
+@media (min-width: 992px) {
+    .container.feature {
+        max-width: 100% !important;
+    }
+
+    .feature-text  {
+        padding-left: calc(((100% - 960px) / 2) + .75rem);
+    }
+}
+
+@media (min-width: 1200px) {
+    .feature-text  {
+        padding-left: calc(((100% - 1140px) / 2) + .75rem);
+    }
+}
+
+@media (min-width: 1400px) {
+    .feature-text  {
+        padding-left: calc(((100% - 1320px) / 2) + .75rem);
+    }
+}
+
+
+/*** Service, Price & Team ***/
+.service-item,
+.price-item,
+.team-item {
+    box-shadow: 0 0 45px rgba(0, 0, 0, .07);
+}
+
+.service-item img,
+.team-item img {
+    transition: .5s;
+}
+
+.service-item:hover img,
+.team-item:hover img {
+    transform: scale(1.1);
+}
+
+.service-item a.btn-slide,
+.price-item a.btn-slide,
+.team-item div.btn-slide {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    font-size: 0;
+}
+
+.service-item a.btn-slide i,
+.service-item a.btn-slide span,
+.price-item a.btn-slide i,
+.price-item a.btn-slide span,
+.team-item div.btn-slide i,
+.team-item div.btn-slide span {
+    position: relative;
+    height: 40px;
+    padding: 0 15px;
+    display: inline-flex;
+    align-items: center;
+    font-size: 16px;
+    color: #FFFFFF;
+    background: var(--primary);
+    border-radius: 0 35px 35px 0;
+    transition: .5s;
+    z-index: 2;
+}
+
+.team-item div.btn-slide span a i {
+    padding: 0 10px;
+}
+
+.team-item div.btn-slide span a:hover i {
+    background: var(--secondary);
+}
+
+.service-item a.btn-slide span,
+.price-item a.btn-slide span,
+.team-item div.btn-slide span {
+    padding-left: 0;
+    left: -100%;
+    z-index: 1;
+}
+
+.service-item:hover a.btn-slide i,
+.price-item:hover a.btn-slide i,
+.team-item:hover div.btn-slide i {
+    border-radius: 0;
+}
+
+.service-item:hover a.btn-slide span,
+.price-item:hover a.btn-slide span,
+.team-item:hover div.btn-slide span {
+    left: 0;
+}
+
+.service-item a.btn-slide:hover i,
+.service-item a.btn-slide:hover span,
+.price-item a.btn-slide:hover i,
+.price-item a.btn-slide:hover span {
+    background: var(--secondary);
+}
+
+
+/*** Testimonial ***/
+/********** Contact & Map Section Styling **********/
+
+.contact-map-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px; /* Reduce space between address and map */
+    flex-wrap: wrap;
+}
+
+.contact-info {
+    flex: 1;
+    max-width: 40%; /* Address takes less space */
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-info h4 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #212121;
+    margin-bottom: 10px;
+}
+
+.contact-info p {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 8px;
+}
+
+/* Map Styling */
+.map-container {
+    flex: 1;
+    width: 100%;
+    height: 350px; /* Set a proper height */
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.15);
+    position: relative;
+}
+
+/* Ensure iframe fits the container */
+.map-container iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .contact-map-wrapper {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .contact-info,
+    .map-container {
+        max-width: 100%;
+        text-align: center;
+    }
+}
+
+
+/*** Contact ***/
+@media (min-width: 992px) {
+    .container.contact-page {
+        max-width: 100% !important;
+    }
+
+    .contact-page .contact-form  {
+        padding-left: calc(((100% - 960px) / 2) + .75rem);
+    }
+}
+
+@media (min-width: 1200px) {
+    .contact-page .contact-form  {
+        padding-left: calc(((100% - 1140px) / 2) + .75rem);
+    }
+}
+
+@media (min-width: 1400px) {
+    .contact-page .contact-form  {
+        padding-left: calc(((100% - 1320px) / 2) + .75rem);
+    }
+}
+
+
+/*** Footer ***/
+.footer {
+    background: linear-gradient(rgba(6, 3, 21, .5), rgba(6, 3, 21, .5)), url(../img/map.png) center center no-repeat;
+    background-size: cover;
+}
+
+.footer .btn.btn-social {
+    margin-right: 5px;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--light);
+    border: 1px solid #FFFFFF;
+    border-radius: 35px;
+    transition: .3s;
+}
+
+.footer .btn.btn-social:hover {
+    color: var(--primary);
+}
+
+.footer .btn.btn-link {
+    display: block;
+    margin-bottom: 5px;
+    padding: 0;
+    text-align: left;
+    color: #FFFFFF;
+    font-size: 15px;
+    font-weight: normal;
+    text-transform: capitalize;
+    transition: .3s;
+}
+
+.footer .btn.btn-link::before {
+    position: relative;
+    content: "\f105";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    margin-right: 10px;
+}
+
+.footer .btn.btn-link:hover {
+    letter-spacing: 1px;
+    box-shadow: none;
+}
+
+.footer .copyright {
+    padding: 25px 0;
+    font-size: 15px;
+    border-top: 1px solid rgba(256, 256, 256, .1);
+}
+
+.footer .copyright a {
+    color: var(--light);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.read-more-content {
+    margin-top: 10px;
+    padding: 10px;
+    background: #f8f9fa; /* Light background */
+    border-top: 1px solid #ddd;
+    font-size: 14px;
+}
+
+/* Enhanced Navbar CSS */
+.custom-navbar {
+    background-color: #FF3E41;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    padding: 0.5rem 1rem;
+    transition: all 0.3s ease-in-out;
+}
+
+.custom-navbar.scrolled {
+    background-color: #FF3E41;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    padding: 0.3rem 1rem;
+}
+
+.navbar-logo {
+    height: 60px;
+    transition: height 0.3s ease;
+}
+
+.navbar-nav .nav-link {
+    color: white !important;
+    font-weight: 600;
+    padding: 0.8rem 1.2rem !important;
+    position: relative;
+    transition: all 0.2s ease;
+}
+
+.navbar-nav .nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 8px;
+    left: 1.2rem;
+    background-color: white;
+    transition: width 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover::after,
+.navbar-nav .nav-link.active::after {
+    width: calc(100% - 2.4rem);
+}
+
+.navbar-nav .nav-link:hover {
+    transform: translateY(-2px);
+}
+
+.dropdown-menu {
+    background-color: #FF3E41;
+    border: none;
+    border-radius: 8px;
+    margin-top: 0.8rem;
+}
+
+.dropdown-item {
+    color: white !important;
+    padding: 0.7rem 1.2rem;
+    transition: all 0.2s ease;
+}
+
+.dropdown-item:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+    transform: translateX(5px);
+}
+
+.navbar-toggler {
+    border: none;
+    padding: 0.5rem;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+@media (max-width: 991px) {
+    .navbar-collapse {
+        background-color: #FF3E41;
+        padding: 1rem;
+        margin-top: 0.5rem;
+        border-radius: 8px;
+    }
+    
+    .navbar-logo {
+        height: 50px;
+    }
+    
+    .nav-link {
+        text-align: center;
+        margin: 0.5rem 0;
+    }
+    
+    .dropdown-menu {
+        background-color: rgba(255, 255, 255, 0.1);
+        text-align: center;
+    }
+}
+/*** Enhanced Navbar CSS with Large Logo ***/
+.custom-navbar {
+    background-color: #FF3E41;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    padding: 3rem 1rem 1rem; /* Increased top padding */
+    transition: all 0.3s ease-in-out;
+    position: relative; /* Added for logo positioning */
+}
+
+.navbar-logo {
+    height: 120px; /* Increased logo size */
+    transition: height 0.3s ease;
+    position: absolute;
+    top: -30px; /* Logo floats above navbar */
+    left: 50px;
+    z-index: 1000;
+    background: white; /* Optional: Add background if needed */
+    padding: 10px;
+    border-radius: 15px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Adjust navbar brand positioning */
+.navbar-brand {
+    position: static; /* Remove default positioning */
+}
+
+/* Navbar links adjustment */
+.navbar-nav .nav-link {
+    padding: 1rem 1.5rem !important;
+    margin: 0 5px;
+}
+
+/* Mobile adjustments */
+/* Mobile adjustments */
+@media (max-width: 991px) {
+    .custom-navbar {
+        padding: 2.5rem 1rem 1rem;
+    }
+    
+    .navbar-logo {
+        height: 80px;
+        width: 100px; /* Reduced width */
+        top: -15px;
+        left: 50%; /* Center horizontally */
+        transform: translateX(-50%); /* Center alignment */
+        padding: 8px;
+    }
+    
+    .navbar-logo img {
+        max-width: 50px; /* Smaller logo image */
+    }
+    
+    .navbar-logo p {
+        font-size: 11px; /* Smaller text */
+        margin-top: -5px;
+        letter-spacing: 0.5px;
+    }
+    
+    .navbar-collapse {
+        margin-top: 2rem; /* More spacing below logo */
+    }
+}
+
+/* Extra small devices (portrait phones) */
+@media (max-width: 575px) {
+    .navbar-logo {
+        width: 90px;
+        height: 70px;
+        top: -10px;
+        padding: 5px;
+    }
+    
+    .navbar-logo img {
+        max-width: 45px;
+    }
+    
+    .navbar-logo p {
+        font-size: 10px;
+    }
+}
+/* Keep original positioning */
+.navbar-logo {
+    position: absolute;
+    top: -30px;
+    left: 50px; /* Original left position */
+    z-index: 1000;
+    background: white;
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    
+    /* New internal alignment */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.2px;
+    width: 160px;
+    transform: none; /* Remove translate if existed */
+}
+
+/* Logo image sizing */
+.navbar-logo img {
+    max-width: 80px;
+    height: auto;
+    margin: 0 auto;
+}
+
+/* Text styling */
+.navbar-logo p {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    color: #1F6F8C;
+    text-transform: uppercase;
+    margin: 0;
+    text-align: center;
+    font-size: 17px; /* Increased from 15px */
+    margin-top: -8px; /* Increased pull */
+    letter-spacing: 0.8px;
+
+}
+
+/* Mobile adjustments */
+@media (max-width: 991px) {
+    .navbar-logo p {
+        display: none !important; /* Hide logo text */
+    }
+    
+    .navbar-logo {
+        height: 60px; /* Reduced height */
+        width: 60px; /* Make it square */
+        top: -10px;
+        left: 20px;
+        padding: 5px;
+    }
+    
+    .navbar-logo img {
+        max-width: 40px; /* Smaller image */
+        margin-top: 5px; /* Center vertically */
+    }
+}
+
+/* Extra small devices */
+@media (max-width: 575px) {
+    .navbar-logo {
+        height: 50px;
+        width: 50px;
+        top: -8px;
+        left: 15px;
+    }
+    
+    .navbar-logo img {
+        max-width: 35px;
+    }
+}
+
+/* Keep existing other navbar styles below */
+/* ... rest of your existing CSS ... */
+
+/********** Modern Full-Screen Hero Section **********/
+/********** Smart Full-Screen Hero Section with Video or Thumbnail **********/
+
+.hero-container {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Full screen */
+    overflow: hidden;
+}
+
+/* Background Video */
+#hero-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+/* Fallback Thumbnail */
+.hero-thumbnail {
+    display: none; /* Hidden by default */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Dark Overlay for Readability */
+.hero-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.hero-container h5 {
+    color: #51CFED !important; /* Change this color as needed */
+}
+
+/* Centered Text Content */
+.hero-content {
+    color: white;
+    max-width: 800px;
+    padding: 20px;
+    z-index: 2;
+}
+
+.hero-title {
+    font-size: 48px;
+    font-weight: bold;
+    color: white;
+}
+
+.highlight-text {
+    color: #FF3E41; /* Bright Red */
+}
+
+.hero-desc {
+    font-size: 20px;
+    color: #ddd;
+    margin-bottom: 20px;
+}
+
+/* Buttons */
+.btn {
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.btn-primary {
+    background-color: #FF3E41; /* Bright Red */
+    border: none;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #D32F2F;
+}
+
+.btn-secondary {
+    background-color: #212121; /* Dark Gray */
+    border: none;
+    color: white;
+    margin-left: 20px;
+}
+
+.btn-secondary:hover {
+    background-color: #444;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .hero-title {
+        font-size: 36px;
+    }
+
+    .btn {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 991px) {
+    .back-to-top {
+        display: none !important;
+    }
+}
