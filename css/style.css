@@ -19,6 +19,10 @@
     bottom: 45px;
     z-index: 99;
 }
+#about {
+    margin-top: 50px; /* Ensures gap between Hero and About */
+}
+
 
 
 /*** Spinner ***/
@@ -254,6 +258,9 @@
     gap: 20px; /* Reduce space between address and map */
     flex-wrap: wrap;
 }
+body {
+    padding-top: 80px; /* Adds space below navbar */
+}
 
 .contact-info {
     flex: 1;
@@ -407,59 +414,131 @@ html {
     font-size: 14px;
 }
 
-/* Enhanced Navbar CSS */
+/*** New Optimized Navbar CSS ***/
 .custom-navbar {
-    background-color: #FF3E41;
-    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
-    padding: 0.5rem 1rem;
-    transition: all 0.3s ease-in-out;
+    position: fixed;  
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: #FF3E41;  
+    padding: 1.2rem 1.2rem;   
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-.custom-navbar.scrolled {
-    background-color: #FF3E41;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-    padding: 0.3rem 1rem;
+
+/* Navbar brand (logo) */
+.navbar-brand {
+    display: flex;
+    align-items: center;
 }
 
-.navbar-logo {
-    height: 60px;
+.navbar-logo-img {
+    height: 80px;  /* Increase logo size */
     transition: height 0.3s ease;
 }
 
+.navbar-text {
+    font-size: 18px; /* Slightly larger font size */
+    font-weight: 700; /* Bold font weight */
+    color: white !important; /* Ensure white color */
+    text-transform: uppercase; /* Uppercase text for a modern look */
+    padding: 0.8rem 1.2rem !important; /* Consistent spacing */
+    position: relative;
+    transition: all 0.3s ease-in-out;
+    background: linear-gradient(45deg, #ffffff, #f8f2f0); /* Gradient text effect */
+    -webkit-background-clip: text; /* Apply gradient to text */
+    -webkit-text-fill-color: transparent; /* Make text transparent to show gradient */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Subtle text shadow */
+    letter-spacing: 1px; /* Slightly spaced letters */
+    margin-left: 10px; /* Space between logo and text */
+}
+
+.navbar-text:hover {
+    opacity: 0.8; /* Slight opacity change on hover */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+}
+
+
+
+/* Navbar links */
 .navbar-nav .nav-link {
     color: white !important;
     font-weight: 600;
     padding: 0.8rem 1.2rem !important;
     position: relative;
-    transition: all 0.2s ease;
-}
-
-.navbar-nav .nav-link::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: 8px;
-    left: 1.2rem;
-    background-color: white;
-    transition: width 0.3s ease;
-}
-
-.navbar-nav .nav-link:hover::after,
-.navbar-nav .nav-link.active::after {
-    width: calc(100% - 2.4rem);
+    transition: all 0.3s ease-in-out;
 }
 
 .navbar-nav .nav-link:hover {
-    transform: translateY(-2px);
+    opacity: 0.8;
 }
 
-.dropdown-menu {
-    background-color: #FF3E41;
-    border: none;
-    border-radius: 8px;
-    margin-top: 0.8rem;
+/* Apply underline only to non-dropdown links */
+.navbar-nav .nav-link:not(.dropdown-toggle)::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: white;
+    left: 50%;
+    bottom: 5px;
+    transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
+    transform: translateX(-50%);
 }
+
+/* Expand underline on hover and active state */
+.navbar-nav .nav-link:not(.dropdown-toggle):hover::after,
+.navbar-nav .nav-link:not(.dropdown-toggle).active::after {
+    width: 80%;
+}
+
+
+/* Navbar toggler (hamburger menu) */
+.navbar-toggler {
+    border: none;
+    padding: 0.5rem;
+}
+
+.navbar-toggler:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* Dropdown menu */
+/* Default dropdown styles */
+.dropdown-menu {
+    display: none; /* Initially hidden */
+    position: absolute !important;
+    background-color: #FF3E41; /* Keep theme color */
+    z-index: 1000; /* Ensure it appears on top */
+}
+
+/* Enable hover-based dropdown only on large screens */
+@media (min-width: 992px) {
+    .dropdown:hover .dropdown-menu {
+        display: block;
+    }
+}
+
+/* Ensure dropdown behaves like other nav links on mobile */
+@media (max-width: 991px) {
+    .navbar-nav .dropdown-menu {
+        display: none; /* Keep hidden by default */
+        position: static; /* Prevents overlapping issues */
+        width: 100%; /* Full width for proper alignment */
+        background-color: #FF3E41; /* Same as navbar */
+    }
+    
+    .navbar-nav .dropdown-menu.show {
+        display: block; /* Show dropdown when toggled */
+    }
+}
+
 
 .dropdown-item {
     color: white !important;
@@ -472,30 +551,33 @@ html {
     transform: translateX(5px);
 }
 
-.navbar-toggler {
-    border: none;
-    padding: 0.5rem;
-}
-
-.navbar-toggler-icon {
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
-}
-
+/* Mobile View Adjustments */
 @media (max-width: 991px) {
-    .navbar-collapse {
-        background-color: #FF3E41;
-        padding: 1rem;
-        margin-top: 0.5rem;
-        border-radius: 8px;
+    .custom-navbar {
+        padding: 1.5rem 1rem;
     }
     
-    .navbar-logo {
-        height: 50px;
+    .navbar-logo-img {
+        height: 60px;
+    }
+    
+    .navbar-toggler {
+        transform: scale(1.2);
+        margin-right: 15px;
+    }
+    
+    .navbar-collapse {
+        background-color: #FF3E41;
+        padding: 1.5rem;
+        margin-top: 1rem;
+        border-radius: 8px;
     }
     
     .nav-link {
         text-align: center;
         margin: 0.5rem 0;
+        font-size: 1.1rem;
+        padding: 1rem 0 !important;
     }
     
     .dropdown-menu {
@@ -503,163 +585,35 @@ html {
         text-align: center;
     }
 }
-/*** Enhanced Navbar CSS with Large Logo ***/
-.custom-navbar {
-    background-color: #FF3E41;
-    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
-    padding: 3rem 1rem 1rem; /* Increased top padding */
-    transition: all 0.3s ease-in-out;
-    position: relative; /* Added for logo positioning */
-}
 
-.navbar-logo {
-    height: 120px; /* Increased logo size */
-    transition: height 0.3s ease;
-    position: absolute;
-    top: -30px; /* Logo floats above navbar */
-    left: 50px;
-    z-index: 1000;
-    background: white; /* Optional: Add background if needed */
-    padding: 10px;
-    border-radius: 15px;
-    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
-}
-
-/* Adjust navbar brand positioning */
-.navbar-brand {
-    position: static; /* Remove default positioning */
-}
-
-/* Navbar links adjustment */
-.navbar-nav .nav-link {
-    padding: 1rem 1.5rem !important;
-    margin: 0 5px;
-}
-
-/* Mobile adjustments */
-/* Mobile adjustments */
-@media (max-width: 991px) {
+/* Extra Small Screens */
+@media (max-width: 575px) {
     .custom-navbar {
-        padding: 2.5rem 1rem 1rem;
+        padding: 1.2rem 0.5rem;
     }
     
-    .navbar-logo {
-        height: 80px;
-        width: 100px; /* Reduced width */
-        top: -15px;
-        left: 50%; /* Center horizontally */
-        transform: translateX(-50%); /* Center alignment */
-        padding: 8px;
-    }
-    
-    .navbar-logo img {
-        max-width: 50px; /* Smaller logo image */
-    }
-    
-    .navbar-logo p {
-        font-size: 11px; /* Smaller text */
-        margin-top: -5px;
-        letter-spacing: 0.5px;
-    }
-    
-    .navbar-collapse {
-        margin-top: 2rem; /* More spacing below logo */
-    }
-}
-
-/* Extra small devices (portrait phones) */
-@media (max-width: 575px) {
-    .navbar-logo {
-        width: 90px;
-        height: 70px;
-        top: -10px;
-        padding: 5px;
-    }
-    
-    .navbar-logo img {
-        max-width: 45px;
-    }
-    
-    .navbar-logo p {
-        font-size: 10px;
-    }
-}
-/* Keep original positioning */
-.navbar-logo {
-    position: absolute;
-    top: -30px;
-    left: 50px; /* Original left position */
-    z-index: 1000;
-    background: white;
-    padding: 15px;
-    border-radius: 15px;
-    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
-    
-    /* New internal alignment */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.2px;
-    width: 160px;
-    transform: none; /* Remove translate if existed */
-}
-
-/* Logo image sizing */
-.navbar-logo img {
-    max-width: 80px;
-    height: auto;
-    margin: 0 auto;
-}
-
-/* Text styling */
-.navbar-logo p {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 700;
-    color: #1F6F8C;
-    text-transform: uppercase;
-    margin: 0;
-    text-align: center;
-    font-size: 17px; /* Increased from 15px */
-    margin-top: -8px; /* Increased pull */
-    letter-spacing: 0.8px;
-
-}
-
-/* Mobile adjustments */
-@media (max-width: 991px) {
-    .navbar-logo p {
-        display: none !important; /* Hide logo text */
-    }
-    
-    .navbar-logo {
-        height: 60px; /* Reduced height */
-        width: 60px; /* Make it square */
-        top: -10px;
-        left: 20px;
-        padding: 5px;
-    }
-    
-    .navbar-logo img {
-        max-width: 40px; /* Smaller image */
-        margin-top: 5px; /* Center vertically */
-    }
-}
-
-/* Extra small devices */
-@media (max-width: 575px) {
-    .navbar-logo {
+    .navbar-logo-img {
         height: 50px;
-        width: 50px;
-        top: -8px;
-        left: 15px;
+    }
+}
+@media (max-width: 991px) {
+    .navbar-text {
+        display: none !important; /* Hides website name */
     }
     
-    .navbar-logo img {
-        max-width: 35px;
+    .navbar-logo-img {
+        height: 70px !important; /* Increase logo size */
     }
 }
 
-/* Keep existing other navbar styles below */
+@media (max-width: 575px) {
+    .navbar-logo-img {
+        height: 60px !important; /* Slightly smaller for extra small screens */
+    }
+}
+
+
+
 /* ... rest of your existing CSS ... */
 
 /********** Modern Full-Screen Hero Section **********/
@@ -705,14 +659,30 @@ html {
 /* Dark Overlay for Readability */
 .hero-overlay {
     position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+    height: 100%;  /* Ensures full coverage */
+    background: rgba(0, 0, 0, 0.5); /* Adjust transparency */
+    display: flex; 
+    align-items: center;  /* Center text vertically */
+    justify-content: center; /* Center text horizontally */
+    text-align: center;
+    padding: 20px;
+}
+
+.hero-container {
+    position: relative;
+    width: 100%;
+    min-height: 100vh; /* Ensures it takes full screen */
     display: flex;
     align-items: center;
     justify-content: center;
-    text-align: center;
+    overflow: hidden;
+    padding-top: 80px; /* Adds space to prevent overlap */
 }
+
+
 .hero-container h5 {
     color: #51CFED !important; /* Change this color as needed */
 }
@@ -783,6 +753,12 @@ html {
 
 @media (max-width: 991px) {
     .back-to-top {
+        display: none !important;
+    }
+}
+
+@media (max-width: 991px) {
+    .hide-on-mobile {
         display: none !important;
     }
 }
