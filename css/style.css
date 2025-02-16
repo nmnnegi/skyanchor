@@ -427,6 +427,8 @@ html {
 }
 
 
+
+
 /* Navbar brand (logo) */
 .navbar-brand {
     display: flex;
@@ -597,9 +599,7 @@ html {
     }
 }
 @media (max-width: 991px) {
-    .navbar-text {
-        display: none !important; /* Hides website name */
-    }
+    
     
     .navbar-logo-img {
         height: 70px !important; /* Increase logo size */
@@ -611,10 +611,120 @@ html {
         height: 60px !important; /* Slightly smaller for extra small screens */
     }
 }
+/* Default (Desktop) */
+/* Default (Desktop) */
+/* Default Styles (Desktop) */
+/* Default Styles (Desktop) */
+.navbar-text {
+    font-size: 16px !important; /* Keep SkyAnchor size larger */
+    font-weight: 700;
+    color: white !important;
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: column; /* Stack text like mobile */
+    text-align: center;
+    gap: 3px;
+}
+
+/* Make "Logistics India" smaller */
+.brand-sub {
+    font-size: 12px !important; /* Reduce size */
+    font-weight: 600; /* Keep it slightly bold */
+}
+
+.brand-india {
+    font-size: 10px !important; /* Even smaller for better alignment */
+    font-weight: 500; /* Reduce weight slightly */
+}
+
+/* Mobile-specific changes */
+@media (max-width: 991px) {
+    .navbar-text {
+        font-size: 14px !important; /* Adjust size for mobile */
+    }
+
+    .brand-main {
+        font-size: 16px !important; /* Keep SkyAnchor larger */
+    }
+
+    .brand-sub {
+        font-size: 11px !important; /* Reduce Logistics size */
+    }
+
+    .brand-india {
+        font-size: 9px !important; /* Keep India even smaller */
+    }
+}
+
+
+
 
 
 
 /* ... rest of your existing CSS ... */
+/*** Updated Logo Box Effect ***/
+.navbar-brand {
+    background-color: white; /* White background for the logo box */
+    padding: 10px 15px; /* Add padding to create the box effect */
+    border-radius: 8px; /* Rounded corners for the box */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    margin-right: 20px; /* Space between logo box and other navbar items */
+}
+
+.navbar-logo-img {
+    height: 50px; /* Adjust logo size as needed */
+    margin-right: 10px; /* Space between logo image and text */
+}
+
+.navbar-text {
+    background: none !important; /* Remove gradient */
+    -webkit-text-fill-color: initial; /* Reset text color */
+    color: #0056b3 !important; /* Professional blue color */
+    text-shadow: none; /* Remove text shadow */
+    padding: 0 !important; /* Remove default padding */
+}
+
+.brand-main {
+    color: #0056b3 !important; /* Main brand blue */
+    font-size: 20px !important;
+    font-weight: 700;
+}
+
+.brand-sub {
+    color: #1a73e8 !important; /* Slightly lighter blue */
+    font-size: 14px !important;
+    font-weight: 600;
+}
+
+.brand-india {
+    color: #004a99 !important; /* Darker blue accent */
+    font-size: 12px !important;
+    font-weight: 500;
+}
+
+/* Mobile adjustments */
+@media (max-width: 991px) {
+    .navbar-brand {
+        padding: 8px 12px; /* Smaller padding on mobile */
+        margin-right: 15px;
+    }
+
+    .navbar-logo-img {
+        height: 40px;
+    }
+
+    .brand-main {
+        font-size: 18px !important;
+    }
+
+    .brand-sub {
+        font-size: 12px !important;
+    }
+
+    .brand-india {
+        font-size: 10px !important;
+    }
+}
 
 /********** Modern Full-Screen Hero Section **********/
 /********** Smart Full-Screen Hero Section with Video or Thumbnail **********/
@@ -762,3 +872,58 @@ html {
         display: none !important;
     }
 }
+
+
+
+
+/* Quote Section Styling */
+#quote {
+    background: #f8f9fa;
+    padding: 60px 20px;
+    border-radius: 10px;
+}
+
+.quote-box {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.quote-box:hover {
+    transform: scale(1.02);
+}
+
+/* Multi-select dropdown */
+.form-select[multiple] {
+    height: auto;
+}
+
+/* Buttons */
+.btn-lg {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.btn-success {
+    background-color: #25D366 !important;
+    border: none;
+}
+
+.btn-primary {
+    background-color: #007bff !important;
+    border: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .quote-box {
+        padding: 20px;
+    }
+    
+    .btn-lg {
+        font-size: 16px;
+    }
+}
+

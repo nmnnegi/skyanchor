@@ -25,36 +25,94 @@
     <link href="css/style.css" rel="stylesheet">
 </head>
 <body>
+    
+<script>
+
+    function toggleReadMore(button) {
+    let content = button.nextElementSibling; // Gets the next div (hidden content)
+    
+    if (content.style.display === "none") {
+        content.style.display = "block";
+        button.querySelector("span").innerText = "Read Less"; // Change button text
+    } else {
+        content.style.display = "none";
+        button.querySelector("span").innerText = "Read More"; // Restore button text
+    }
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+    var dropdownElements = document.querySelectorAll('.dropdown-toggle');
+
+    dropdownElements.forEach(function (dropdown) {
+        dropdown.addEventListener("click", function (event) {
+            if (window.innerWidth < 992) { // Only for mobile
+                event.preventDefault();
+                let bsDropdown = new bootstrap.Dropdown(this);
+                bsDropdown.toggle();
+            }
+        });
+    });
+
+    // Close dropdown when clicking outside
+    document.addEventListener("click", function (event) {
+        dropdownElements.forEach(function (dropdown) {
+            let menu = dropdown.nextElementSibling;
+            if (!dropdown.contains(event.target) && !menu.contains(event.target)) {
+                menu.classList.remove("show");
+            }
+        });
+    });
+});
+
+
+
+     
+
+
+</script>
 
     <!-- Navbar (Copied from tools-metric.html) -->
     <nav id="navbar" class="navbar navbar-expand-lg custom-navbar">
         <div class="container position-relative">
+            <!-- Simplified Logo -->
             <a class="navbar-brand d-flex align-items-center" href="index.html">
                 <img src="img/reallogo.png" alt="SkyAnchor Logo" class="navbar-logo-img">
-                <span class="navbar-text ms-2">SkyAnchor Logistics</span>
+                <span class="navbar-text">
+                    <span class="brand-main">SkyAnchor</span>
+                    <span class="brand-sub">Logistics <span class="brand-india">India</span></span>
+                </span>
             </a>
+            
+            
+    
+            <!-- Navbar Toggler for Mobile -->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
+            
+            <!-- Navbar Links -->
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
                     <li class="nav-item"><a class="nav-link" href="service.html">Services</a></li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown">Tools & Utilities</a>
-                        <ul class="dropdown-menu">
+                        <a class="nav-link dropdown-toggle" href="#" id="toolsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Tools & Utilities
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="toolsDropdown">
                             <li><a class="dropdown-item" href="tools-metric.html">Metric Conversion</a></li>
-                            <li><a class="dropdown-item active" href="tools-incoterms.html">Incoterms Guide</a></li>
+                            <li><a class="dropdown-item" href="tools-incoterms.html">Incoterms Guide</a></li>
                             <li><a class="dropdown-item" href="tools-container.html">Container Dimensions</a></li>
                         </ul>
                     </li>
+                    
+                    
                     <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
                 </ul>
             </div>
         </div>
     </nav>
-
     <!-- Hero Section -->
     <div class="container text-center py-5" style="margin-top: 80px;">
         <h1 class="text-primary fw-bold">Incoterms Guide</h1>

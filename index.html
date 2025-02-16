@@ -98,8 +98,13 @@ document.addEventListener("DOMContentLoaded", function () {
         <!-- Simplified Logo -->
         <a class="navbar-brand d-flex align-items-center" href="index.html">
             <img src="img/reallogo.png" alt="SkyAnchor Logo" class="navbar-logo-img">
-            <span class="navbar-text ms-2">SkyAnchor Logistics</span>
+            <span class="navbar-text">
+                <span class="brand-main">SkyAnchor</span>
+                <span class="brand-sub">Logistics <span class="brand-india">India</span></span>
+            </span>
         </a>
+        
+        
 
         <!-- Navbar Toggler for Mobile -->
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -110,7 +115,7 @@ document.addEventListener("DOMContentLoaded", function () {
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                <li class="nav-item"><a class="nav-link " href="about.html">About</a></li>
                 <li class="nav-item"><a class="nav-link" href="service.html">Services</a></li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="toolsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -199,8 +204,8 @@ document.addEventListener("DOMContentLoaded", function () {
 <!-- Modern Full-Screen Hero Section with Smart Video -->
 <div class="hero-container">
     <!-- Background Video (Hidden if network is slow) -->
-    <video id="hero-video" poster="img/carousel-1.jpg" playsinline autoplay muted loop>        <source src="img/vid1.webm" type="video/webm">
-        <source src="img/vid (1).mp4" type="video/mp4">
+    <video id="hero-video" poster="img/carousel-1.jpg" playsinline autoplay muted loop>        <source src="img/rvm.webm" type="video/webm">
+        <source src="img/rv.mp4" type="video/mp4">
     </video>
     
     
@@ -213,7 +218,8 @@ document.addEventListener("DOMContentLoaded", function () {
     <!-- Dark Overlay for Readability -->
     <div class="hero-overlay">
         <div class="hero-content">
-            <h5 class="text-uppercase text-secondary">welcome to skyanchor Logistics</h5>
+            <h5 class="text-uppercase text-primary">welcome to SkyAnchor Logistics</h5>
+
             <h1 class="hero-title">Streamline Your Supply Chain with Trusted <span class="highlight-text">Logistics</span>  </h1>
             <p class="hero-desc hide-on-mobile">
                 As a leading logistics provider, we take pride in delivering seamless, efficient, and cost-effective transportation, ensuring your shipments arrive safely and on time.
@@ -265,9 +271,35 @@ document.addEventListener("DOMContentLoaded", function () {
         </div>
     </div>
     <!-- About End -->
+<!-- Affiliation & Certification Start -->
+<div id="affiliation" class="container-fluid py-3 px-lg-0 text-center" 
+    style="background: #f8f9fa; padding: 10px 0; border-radius: 8px; box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.1);">
+    
+    <h6 class="text-uppercase d-inline me-2 fw-bold" 
+        style="font-weight: 700; font-size: 18px; margin-bottom: 5px;">
+        Affiliation & Certification
+    </h6>
+
+    <div class="d-flex justify-content-center align-items-center gap-2 flex-wrap">
+        <img src="img/msme.png" alt="MSME Certification" class="img-fluid" 
+            style="max-width: 90px; border-radius: 6px; padding: 4px; 
+                   box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease-in-out;"
+            onmouseover="this.style.transform='scale(1.05)'" 
+            onmouseout="this.style.transform='scale(1)'">
+
+        <img src="img/iso.png" alt="ISO Certification" class="img-fluid" 
+            style="max-width: 90px; border-radius: 6px; padding: 4px; 
+                   box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease-in-out;"
+            onmouseover="this.style.transform='scale(1.05)'" 
+            onmouseout="this.style.transform='scale(1)'">
+    </div>
+
+</div>
+<!-- Affiliation & Certification End -->
 
 
-    <!-- Fact Start -->
+
+    
   
 
     <!-- Service Start -->
@@ -511,6 +543,93 @@ document.addEventListener("DOMContentLoaded", function () {
 <!-- Contact & Map Section End -->
 
 <!-- Contact & Map Section End -->
+
+<!-- Quote Request Section -->
+<div id="quote" class="container-fluid py-5 bg-light">
+    <div class="container text-center">
+        <h6 class="text-secondary text-uppercase mb-2">Get a Quote</h6>
+        <h1 class="mb-4 text-dark">Request a Free Quote</h1>
+        <p class="text-muted mb-4">Fill in the details below and get a customized quote for your logistics needs.</p>
+
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
+                <div class="quote-box p-4 shadow-sm rounded bg-white">
+                    <form id="quoteForm">
+                        <div class="mb-3">
+                            <label for="name" class="form-label fw-medium">Your Name</label>
+                            <input type="text" class="form-control" id="name" name="name" required placeholder="Enter your full name">
+                        </div>
+                        <div class="mb-3">
+                            <label for="service" class="form-label fw-medium">Select Services</label>
+                            <select class="form-select" id="service" name="service" multiple required>
+                                <option value="Air Freight">Air Freight</option>
+                                <option value="Ocean Freight">Ocean Freight</option>
+                                <option value="Road Freight">Road Freight</option>
+                                <option value="Train Freight">Train Freight</option>
+                                <option value="Customs Clearance">Customs Clearance</option>
+                                <option value="Warehouse Solutions">Warehouse Solutions</option>
+                            </select>
+                            <small class="text-muted">Hold Ctrl (Windows) or Cmd (Mac) to select multiple.</small>
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label fw-medium">Additional Details</label>
+                            <textarea class="form-control" id="message" name="message" rows="4" required placeholder="Describe your shipping needs..."></textarea>
+                        </div>
+                        <div class="d-flex gap-3">
+                            <button type="button" class="btn btn-success w-50 btn-lg" onclick="sendWhatsApp()">
+                                <i class="fab fa-whatsapp"></i> WhatsApp
+                            </button>
+                            <button type="button" class="btn btn-primary w-50 btn-lg" onclick="sendEmail()">
+                                <i class="fas fa-envelope"></i> Email
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+function getSelectedServices() {
+    let services = [];
+    let selectedOptions = document.getElementById("service").selectedOptions;
+    for (let option of selectedOptions) {
+        services.push(option.value);
+    }
+    return services.join(", ");
+}
+
+function sendWhatsApp() {
+    let name = document.getElementById("name").value;
+    let services = getSelectedServices();
+    let message = document.getElementById("message").value;
+
+    let phoneNumber = "919818389040"; // Replace with your WhatsApp number
+    
+    let whatsappMessage = `Hello, I want a quote.\n\nName: ${name}\nServices: ${services}\nDetails: ${message}`;
+    
+    let whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+    
+    window.open(whatsappURL, "_blank"); // Opens WhatsApp
+}
+
+function sendEmail() {
+    let name = document.getElementById("name").value;
+    let services = getSelectedServices();
+    let message = document.getElementById("message").value;
+
+    let recipientEmail = "amit@skyanchors.com"; // Replace with your email
+    
+    let subject = "Quote Request from " + name;
+    let body = `Hello,\n\nI want a quote.\n\nName: ${name}\nServices: ${services}\nDetails: ${message}`;
+    
+    let mailtoLink = `mailto:${recipientEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    
+    window.location.href = mailtoLink; // Opens email app
+}
+</script>
+
 
 
 

@@ -101,8 +101,13 @@ document.addEventListener("DOMContentLoaded", function () {
         <!-- Simplified Logo -->
         <a class="navbar-brand d-flex align-items-center" href="index.html">
             <img src="img/reallogo.png" alt="SkyAnchor Logo" class="navbar-logo-img">
-            <span class="navbar-text ms-2">SkyAnchor Logistics</span>
+            <span class="navbar-text">
+                <span class="brand-main">SkyAnchor</span>
+                <span class="brand-sub">Logistics <span class="brand-india">India</span></span>
+            </span>
         </a>
+        
+        
 
         <!-- Navbar Toggler for Mobile -->
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -112,7 +117,7 @@ document.addEventListener("DOMContentLoaded", function () {
         <!-- Navbar Links -->
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
-                <li class="nav-item"><a class="nav-link " href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
                 <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
                 <li class="nav-item"><a class="nav-link" href="service.html">Services</a></li>
                 <li class="nav-item dropdown">
@@ -132,7 +137,6 @@ document.addEventListener("DOMContentLoaded", function () {
         </div>
     </div>
 </nav>
-
 <!-- JavaScript to Change Navbar Color on Scroll -->
 <script>
     window.addEventListener("scroll", function () {
