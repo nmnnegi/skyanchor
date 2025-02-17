@@ -927,3 +927,19 @@ html {
     }
 }
 
+
+@media (max-width: 768px) {
+    .hero-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Centers horizontally */
+        justify-content: center; /* Centers vertically */
+        height: 100%; /* Ensures it takes full height */
+    }
+
+    .hero-content .btn {
+        margin: 5px 0; /* Small margin for spacing */
+    }
+}
+
+
