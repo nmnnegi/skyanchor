@@ -1,0 +1,13 @@
+{
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Skyanchor Logistics",
+    "url": "https://www.skyanchors.com/",
+    "logo": "https://www.skyanchors.com/logo.png",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+91 98183 89040",
+      "contactType": "customer service"
+    }
+  }
+  
